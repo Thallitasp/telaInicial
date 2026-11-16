@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal DevWeb Semântico</title>
+    <style>
+        /* Reset básico e rolagem suave */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background-color: #f1f5f9;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Cabeçalho */
+        header {
+            background: linear-gradient(135deg, #0f172a, #1e3a8a);
+            color: #ffffff;
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+
+        .logo {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.12);
+            color: #38bdf8;
+            padding: 0.35rem 0.9rem;
+            border-radius: 999px;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.75rem;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        /* Menu de Navegação */
+        nav {
+            background-color: #1e293b;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            padding: 0.75rem 1rem;
+        }
+
+        nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        nav a:hover {
+            background-color: #38bdf8;
+            color: #0f172a;
+        }
+
+        /* Área Principal (Layout de 2 colunas) */
+        main {
+            max-width: 1100px;
+            width: 100%;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            flex: 1;
+        }
+
+        /* Artigo Principal */
+        article {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        article h2 {
+            color: #0f172a;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        article p {
+            margin-bottom: 1.1rem;
+            color: #334155;
+        }
+
+        article section {
+            background-color: #f8fafc;
+            border-left: 4px solid #2563eb;
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        article section h3 {
+            color: #1e3a8a;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        article section p {
+            margin-bottom: 0;
+        }
+
+        /* Botão Voltar ao Topo */
+        .btn-topo {
+            display: inline-block;
+            margin-top: 1rem;
+            background-color: #2563eb;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.65rem 1.25rem;
+            border-radius: 8px;
+            transition: background-color 0.2s, transform 0.15s;
+        }
+
+        .btn-topo:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        /* Barra Lateral (Aside) */
+        aside {
+            background-color: #ffffff;
+            padding: 1.75rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            align-self: start;
+            border-top: 4px solid #38bdf8;
+        }
+
+        aside h3 {
+            color: #0f172a;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        aside p {
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: auto;
+            font-size: 0.9rem;
+        }
+
+        footer p+p {
+            margin-top: 0.35rem;
+            color: #64748b;
+        }
+
+        /* Responsividade para telas menores */
+        @media (max-width: 768px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body id="top">
+
+    <!-- Cabeçalho com logotipo fictício e título do site -->
+    <header>
+        <div class="logo">
+            <strong>&lt;/&gt; DevWeb Studio</strong>
+        </div>
+        <h1>Desenvolvimento Web Moderno e Acessível</h1>
+    </header>
+
+    <!-- Menu de navegação principal -->
+    <nav aria-label="Navegação Principal">
+        <ul>
+            <li><a href="#proposito">Propósito</a></li>
+            <li><a href="#boas-praticas">Boas Práticas</a></li>
+            <li><a href="#sobre-autora">Sobre a Autora</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- Conteúdo principal da página -->
+    <main>
+        <section id="proposito">
+            <article>
+                <h2>O Propósito da Web Semântica com HTML5</h2>
+                <p>
+                    Este portal tem como objetivo demonstrar a aplicação prática dos elementos semânticos introduzidos
+                    pelo HTML5 na construção de páginas web estruturadas, organizadas e acessíveis.
+                </p>
+                <p>
+                    Diferente do uso genérico de contêineres não semânticos, tags como <code>header</code>,
+                    <code>nav</code>, <code>main</code>, <code>article</code>, <code>section</code>, <code>aside</code>
+                    e <code>footer</code> atribuem significado claro a cada bloco de informação, facilitando a leitura
+                    por tecnologias assistivas (como leitores de tela) e otimizando a indexação por mecanismos de busca.
+                </p>
+
+                <section id="boas-praticas">
+                    <h3>Benefícios da Estruturação Correta</h3>
+                    <p>
+                        Uma hierarquia lógica de títulos e seções melhora a manutenibilidade do código e garante que o
+                        conteúdo seja compreendido tanto por navegadores quanto por desenvolvedores.
+                    </p>
+                </section>
+
+                <!-- Botão/link de interatividade para voltar ao topo -->
+                <a href="#top" class="btn-topo" role="button">&uarr; Voltar ao topo da página</a>
+            </article>
+        </section>
+
+        <!-- Conteúdo complementar / biografia -->
+        <aside id="sobre-autora">
+            <h3>Sobre a Autora</h3>
+            <p>
+                <strong>Thallita da Silva Pedreira</strong> é estudante de Tecnologia da Informação no Centro
+                Universitário Celso Lisboa, com foco em desenvolvimento de software, estruturação front-end e boas
+                práticas de acessibilidade digital.
+            </p>
+        </aside>
+    </main>
+
+    <!-- Rodapé com contato e direitos autorais -->
+    <footer id="contato">
+        <p>Contato: contato@devwebstudio.exemplo.com.br</p>
+        <p>&copy; 2026 DevWeb Studio - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+
+</html>
